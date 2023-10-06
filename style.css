@@ -27,7 +27,7 @@ header .bg {
 }
 header img {
     padding-top: 20px;
-    padding-left: 8vw;
+    padding-left: 7.5vw;
     width: 90vw;
     height: auto;
 }
@@ -73,17 +73,34 @@ main .links a{
     padding-top: 60px;
     font-family: 'Playfair Display';
 }
-
 .work .cards .c{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 90vw;
-    border: 1px solid white;
     max-width: 280px;
-    height: 280px;
-    padding-left: 15px;
-    background: crimson;
+    padding: 10px 0 40px 20px;
+    margin-bottom: 50px;
+    box-shadow: 5px 5px 15px 0 #3333;
+}
+.cards p {
+    width: 50%;
+}
+.cards h4 {
+    padding-right: 75px;
+    font-size: 1.2rem;
+}
+.card-heading{
+    display: flex;
+    height : 50px;
+    padding-top: 15px;
+}
+.cards p {
+    width: 100%;
 }
 svg {
-    transform: translate(15px)
+    transform: translate(15px, 6px) scale(1.1);
 }
 img {
     width: 100%;
@@ -92,6 +109,7 @@ img {
 }
 main .work a{
     text-decoration: none;
+    transform: scale(1.2) translateY(5px);
 }
 /*  Footer  */
 footer {
@@ -129,6 +147,7 @@ footer .links a {
     color: black;
 } 
 footer img {
-    width: 100vw;
-    height: 250px;
+    width: 120vw;
+    height: 350px;
+    background: red;
 }
