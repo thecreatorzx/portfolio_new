@@ -7,6 +7,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    max-width: 100vw;
 }        
 body {
     overflow-x: hidden;
@@ -20,36 +21,51 @@ header{
 header .bg {
     position: absolute;
     width: 100vw;
-    height: 250px;
+    height: 140vw;
     background: rgb(8, 151, 177);
     clip-path: polygon( 0 0,0 100% , 100% 50%, 100% 0);
     z-index: -1;
+    max-height: 500px;
 }
-header img {
-    padding-top: 20px;
-    padding-left: 7.5vw;
-    width: 90vw;
-    height: auto;
-}
+
 /* Main */
 main {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding-bottom: 30px;
 }
+.about {
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 7vw;
+    padding-right: 25px;
+}
+.about img {
+    padding-top: 60px;
+    width: 90vw;
+    max-width: 300px;
+    height: auto;
+}
 main h1{
-    position: absolute;
-    font-size: 2.7rem;
+    position: relative;
+    font-size: min(15vw,3.5rem);
     color: white;
-    transform: translate(0,-50px);
+    transform: translate(-10px,min(40vw,-90px));
     text-shadow: 1px 1px 5px black,2px 2px 0 black;
     font-family: 'Playfair';
     font-size: 100;
+    width: 60vw;
+    height: 30px;
+    text-align: center;
+    max-width: 300px;
 }
 h2 {
     font-family: 'Playfair Display';
-    padding-top: 20px;
     padding-bottom: 10px;
     font-size: 1.8rem;
 }
@@ -57,6 +73,8 @@ main p{
     width: 90vw;
 }
 main .links {
+    display: flex;
+    justify-content: center;
     padding-top: 15px;
     transform: scale(1.4);
 }
@@ -73,6 +91,16 @@ main .links a{
     padding-top: 60px;
     font-family: 'Playfair Display';
 }
+.work .cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3vw;
+    width: 100vw;
+    max-width: 1000px;
+    flex-direction: row;
+}
 .work .cards .c{
     display: flex;
     justify-content: center;
@@ -88,19 +116,19 @@ main .links a{
     width: 50%;
 }
 .cards h4 {
-    padding-right: 75px;
     font-size: 1.2rem;
 }
 .card-heading{
     display: flex;
-    height : 50px;
-    padding-top: 15px;
+    justify-content: space-between;
+    height : 40px;
+    padding: 5px 25px;
 }
 .cards p {
     width: 100%;
 }
 svg {
-    transform: translate(15px, 6px) scale(1.1);
+    transform: scale(1.1) translate(0,5px);
 }
 img {
     width: 100%;
@@ -109,7 +137,7 @@ img {
 }
 main .work a{
     text-decoration: none;
-    transform: scale(1.2) translateY(5px);
+    transform: scale(1.2)translate(0,5px);
 }
 /*  Footer  */
 footer {
@@ -129,7 +157,7 @@ footer .links {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 35vw;
+    width: 135vw;
     max-width: 100px;
 }
 footer h4 {
@@ -147,7 +175,77 @@ footer .links a {
     color: black;
 } 
 footer img {
+    transform:scale(1.1);
     width: 120vw;
-    height: 350px;
-    background: red;
+    height: 300px;
+}
+/* Responsive tablet 350px wide */
+@media screen and (min-width: 650px) {
+    .about {
+        transform: translate(30px,10vh);
+        width: 80vw;
+        padding: 20px;
+        padding-top: 50px;
+        padding-bottom: 30px;
+        margin-bottom: 50px;
+        margin-top: 100px;
+        background: white;
+        box-shadow: 5px 5px 15px 0 #3335;
+    }
+    .about p {
+        width: 100%;
+        font-size: max(1.8vw,1.1rem);
+    }
+    .about h2 {
+        transform: translate(130px);
+        font-size: 2rem;
+    }
+    .about img {
+        position: absolute;
+        top: -130px;
+        left: -15px;
+        transform:scale(1.1);
+        aspect-ratio: .7;
+    }
+    .about h1 {
+        position: absolute;
+        top: 10px;
+        left: 215px;
+    }
+    main .links {
+        display: none;
+    }
+    .float {
+        width: 300px;
+        aspect-ratio: 1.4;
+        float: left;
+    }
+    footer {
+        padding-top: 20px;
+    }
+    footer img {
+        height: 250px;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .about img {
+        position: absolute;
+        top: -50px;
+        left: -15px;
+        transform:scale(1.5);
+        aspect-ratio: .7;
+    }
+    .about p{
+        font-size: 1.2rem;
+    }
+    .float {
+        width: 350px;
+        height: 25vw;
+    }
+    .about h1 {
+        top: 70vh;
+        font-size: 4rem;
+        left: 0;
+    }
 }
